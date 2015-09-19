@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+        PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+        
+<sqlMap namespace="person">
+  <resultMap id="result" class="org.webutils.beans.Person">
+    <result property="id" column="id" columnIndex="1"/>
+    <result property="name" column="name" columnIndex="2"/>
+    <result property="address" column="address" columnIndex="3"/>
+    <result property="postcode" column="postcode" columnIndex="4"/>
+  </resultMap>
+
+  <select id="selectAll" resultMap="result">
+    SELECT p.id, p.name, p.address, p.postcode
+    FROM person p
+  </select>
+</sqlMap>
