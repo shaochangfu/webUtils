@@ -23,8 +23,8 @@ public class PersonController {
 
   @RequestMapping(value = "list", method = RequestMethod.GET)
   public String getAddressList(Model model) {
+    logger.debug("list");
     model.addAttribute("people", personDao.selectAll());
-    System.out.println("hello ==== hello");
     return "person/list";
   }
 }
